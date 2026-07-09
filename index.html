@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>水榭年华 · 技师风采</title>
+    <!-- 微信分享卡片配置 -->
+    <meta property="og:title" content="水榭年华娱乐休闲会所 · 技师风采">
+    <meta property="og:description" content="K歌沐足·轻奢SPA·养生足浴 | 10公里免费接送 | 韶关武江区">
+    <meta property="og:image" content="">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- 字体：毛笔标题 + 宋体正文 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            /* 墨色基底 */
+            --ink: #16130f;
+            --ink-deep: #0c0a08;
+            --ink-soft: #221d18;
+            --ink-card: rgba(28, 24, 19, 0.62);
+            /* 宣纸白文字 */
+            --paper: #f1e8d8;
+            --paper-dim: #cdbfa6;
+            --paper-muted: #8a7c66;
+            /* 朱砂红（主强调）*/
+            --cinnabar: #b23a2e;
+            --cinnabar-light: #c8503f;
+            --cinnabar-deep: #8c2c22;
+            /* 水雾青（辅助点缀）*/
+            --jade: #7fa391;
+            --jade-deep: #4f6b5c;
+            /* 描边 */
+            --border-ink: rgba(241, 232, 216, 0.14);
+            --border-ink-strong: rgba(241, 232, 216, 0.32);
+            --radius-lg: 26px;
+            --radius-md: 18px;
+            --radius-sm: 12px;
+            --shadow-card: 0 12px 30px rgba(0,0,0,0.55);
+            --shadow-btn: 0 4px 16px rgba(0,0,0,0.45);
+            --transition: 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        body {
+            font-family: 'Noto Serif SC', 'Inter', -apple-system, system-ui, sans-serif;
+            background: var(--ink);
+            color: var(--paper);
+            line-height: 1.5;
+            min-height: 100vh;
+            -webkit-tap-highlight-color: transparent;
+            background-image:
+                radial-gradient(ellipse at 16% 10%, rgba(127,163,145,0.13) 0%, transparent 55%),
+                radial-gradient(ellipse at 84% 88%, rgba(178,58,46,0.09) 0%, transparent 55%),
+                linear-gradient(180deg, #17130e 0%, #0b0907 100%);
+            background-attachment: fixed;
+        }
+        ::-webkit-scrollbar { width: 4px; background: #1a1410; }
+        ::-webkit-scrollbar-thumb { background: var(--cinnabar-deep); border-radius: 12px; }
+
+        .main-container {
+            max-width: 480px;
+            margin: 0 auto;
+            background: rgba(14, 11, 8, 0.66);
+            backdrop-filter: blur(4px);
+            min-height: 100vh;
+            position: relative;
+            padding-bottom: 100px;
+            box-shadow: 0 0 60px rgba(0,0,0,0.6);
+            border-left: 1px solid var(--border-ink);
+            border-right: 1px solid var(--border-ink);
+        }
+
+        /* ===== 头部 ===== */
+        .hero {
+            text-align: center;
+            padding: 36px 16px 12px;
+            position: relative;
+            overflow: hidden;
+        }
+        /* 顶部远山水雾（极淡装饰） */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -20px; left: 50%;
+            transform: translateX(-50%);
+            width: 320px; height: 220px;
+            background:
+                radial-gradient(60px 30px at 20% 80%, rgba(127,163,145,0.10), transparent 70%),
+                radial-gradient(90px 44px at 50% 90%, rgba(127,163,145,0.08), transparent 70%),
+                radial-gradient(70px 34px at 80% 82%, rgba(127,163,145,0.09), transparent 70%);
+            filter: blur(6px);
+            pointer-events: none;
+        }
+        .hero h1 {
+            font-family: 'Ma Shan Zheng', 'Noto Serif SC', serif;
+            font-size: clamp(2.4rem, 9vw, 3.2rem);
+            font-weight: 400;
+            background: linear-gradient(135deg, var(--paper) 0%, var(--cinnabar-light) 70%, var(--cinnabar) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 8px;
+            text-indent: 8px;
+            margin-bottom: 6px;
+            position: relative;
+            z-index: 2;
+            filter: drop-shadow(0 2px 6px rgba(0,0,0,0.5));
+        }
+        .hero-subtitle {
+            font-size: 0.72rem;
+            color: var(--paper-muted);
+            letter-spacing: 4px;
+            margin-bottom: 14px;
+            position: relative;
+            z-index: 2;
+        }
+        /* 朱砂印章 */
+        .hero-seal {
+            position: absolute;
+            top: 30px; right: 22px;
+            width: 38px; height: 38px;
+            background: linear-gradient(135deg, var(--cinnabar-light), var(--cinnabar-deep));
+            color: var(--paper);
+            font-family: 'Ma Shan Zheng', 'Noto Serif SC', serif;
+            font-size: 0.72rem;
+            line-height: 1.05;
+            display: flex; align-items: center; justify-content: center;
+            border-radius: 6px;
+            transform: rotate(-6deg);
+            box-shadow: 0 2px 10px rgba(140,44,34,0.5), inset 0 0 0 1px rgba(241,232,216,0.25);
+            z-index: 3;
+            letter-spacing: 0;
+            padding: 2px;
+        }
+        /* 装饰分割线（水墨笔触感） */
+        .divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 0 auto 14px;
+            position: relative;
+            z-index: 2;
+        }
+        .divider .line {
+            width: 50px; height: 1px;
+            background: linear-gradient(90deg, transparent, var(--paper-muted), transparent);
+        }
+        .divider .diamond {
+            width: 5px; height: 5px;
+            background: var(--cinnabar);
+            transform: rotate(45deg);
+            box-shadow: 0 0 8px rgba(178,58,46,0.6);
+        }
+
+        .usp-banner {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            position: relative;
+            z-index: 2;
+        }
+        .usp-banner .tag {
+            background: rgba(34, 29, 24, 0.7);
+            backdrop-filter: blur(4px);
+            border: 0.5px solid var(--border-ink-strong);
+            border-radius: 40px;
+            padding: 6px 14px;
+            color: var(--paper-dim);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+            transition: var(--transition);
+        }
+        .usp-banner .tag:active { transform: scale(0.95); }
+
+        /* ===== 环境轮播 ===== */
+        .env-slider {
+            margin: 16px 16px 12px;
+            overflow: hidden;
+            border-radius: var(--radius-lg);
+            height: 180px;
+            background: #1a140e;
+            border: 1px solid var(--border-ink);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+            position: relative;
+        }
+        .env-slider .slides {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            height: 100%;
+        }
+        .env-slider .slide {
+            min-width: 100%; height: 100%;
+            display: flex; align-items: center; justify-content: center;
+            background: #1f1912;
+            color: var(--paper-muted); font-size: 0.8rem;
+            position: relative;
+        }
+        .slide img { width: 100%; height: 100%; object-fit: cover; }
+        .slide::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 50%;
+            background: linear-gradient(180deg, transparent, rgba(0,0,0,0.5));
+            pointer-events: none;
+        }
+        .env-label {
+            position: absolute;
+            bottom: 12px; left: 16px;
+            color: var(--paper);
+            font-size: 0.75rem;
+            font-weight: 500;
+            z-index: 2;
+            text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        .slide.active .env-label { opacity: 1; }
+
+        .env-dots { display: flex; justify-content: center; gap: 8px; margin-top: 10px; }
+        .dot { width: 8px; height: 8px; border-radius: 50%; background: #3a332b; transition: 0.3s; cursor: pointer; }
+        .dot.active { background: var(--cinnabar); box-shadow: 0 0 12px rgba(178,58,46,0.6); width: 24px; border-radius: 4px; }
+
+        /* ===== 营业信息卡片 ===== */
+        .info-bar {
+            display: flex;
+            margin: 0 16px 12px;
+            gap: 8px;
+        }
+        .info-chip {
+            flex: 1;
+            background: var(--ink-card);
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--border-ink);
+            border-radius: var(--radius-md);
+            padding: 12px 8px;
+            text-align: center;
+            font-size: 0.68rem;
+            color: var(--paper-dim);
+        }
+        .info-chip .icon { font-size: 1.1rem; display: block; margin-bottom: 4px; }
+        .info-chip .val { color: var(--paper); font-weight: 600; font-size: 0.72rem; }
+
+        /* ===== 选项卡 ===== */
+        .tab-bar {
+            display: flex; gap: 8px;
+            padding: 16px 16px 8px;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            position: relative;
+        }
+        .tab-bar::-webkit-scrollbar { display: none; }
+        .tab-btn {
+            flex: 1 1 auto; min-width: 85px;
+            background: rgba(28, 24, 19, 0.8);
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--border-ink);
+            border-radius: 40px;
+            padding: 12px 6px;
+            font-size: 0.8rem; font-weight: 600;
+            color: var(--paper-dim);
+            white-space: nowrap; cursor: pointer;
+            transition: var(--transition); text-align: center;
+            box-shadow: var(--shadow-btn);
+            font-family: inherit;
+        }
+        .tab-btn.active {
+            background: linear-gradient(135deg, var(--cinnabar-light), var(--cinnabar-deep));
+            border-color: var(--cinnabar-light);
+            color: var(--paper);
+            box-shadow: 0 6px 20px rgba(178,58,46,0.45);
+            transform: translateY(-2px);
+        }
+        .tab-price-hint { font-size: 0.6rem; font-weight: 400; opacity: 0.92; display: block; margin-top: 2px; }
+
+        /* ===== 内容区 ===== */
+        .project-content { padding: 0 16px; transition: opacity 0.3s ease; }
+        .project-content.fade-out { opacity: 0; }
+
+        .package-group {
+            margin-bottom: 20px;
+            background: var(--ink-card);
+            backdrop-filter: blur(12px);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-ink);
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+        }
+        .package-header {
+            background: rgba(34, 29, 24, 0.7);
+            backdrop-filter: blur(4px);
+            padding: 16px 20px;
+            font-size: 0.95rem; font-weight: 600;
+            color: var(--paper);
+            border-bottom: 1px solid var(--border-ink-strong);
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .package-header .pkg-name { display: flex; align-items: center; gap: 6px; }
+        .package-header .pkg-name::before {
+            content: '❖';
+            color: var(--cinnabar);
+            font-size: 0.8rem;
+        }
+        .package-header .pkg-price {
+            background: linear-gradient(135deg, var(--cinnabar-light), var(--cinnabar-deep));
+            color: var(--paper);
+            padding: 5px 16px;
+            border-radius: 30px;
+            font-size: 0.8rem; font-weight: 700;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+
+        .staff-grid {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 14px; padding: 16px;
+        }
+        .staff-card {
+            background: rgba(30, 25, 20, 0.7);
+            backdrop-filter: blur(8px);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            border: 1px solid var(--border-ink);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+            transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+            display: flex; flex-direction: column;
+            position: relative;
+            cursor: pointer;
+        }
+        .staff-card:active { transform: scale(0.97); }
+        @media (hover: hover) {
+            .staff-card:hover {
+                transform: translateY(-6px) scale(1.02);
+                box-shadow: 0 16px 40px rgba(0,0,0,0.6), 0 0 20px rgba(178,58,46,0.18);
+                border-color: var(--cinnabar);
+            }
+        }
+        .card-img-wrapper {
+            position: relative;
+            width: 100%; aspect-ratio: 1/1;
+            background: #1f1810;
+            overflow: hidden;
+        }
+        .card-img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            filter: saturate(0.92) contrast(1.02);
+        }
+        .staff-card:active .card-img { transform: scale(1.05); }
+        .card-img-wrapper::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 40%;
+            background: linear-gradient(180deg, transparent, rgba(10, 7, 5, 0.7));
+            pointer-events: none;
+        }
+        .zoom-hint {
+            position: absolute;
+            top: 8px; right: 8px;
+            width: 28px; height: 28px;
+            background: rgba(0,0,0,0.5);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--paper);
+            font-size: 0.8rem;
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 3;
+        }
+        .staff-card:hover .zoom-hint { opacity: 1; }
+
+        .card-info {
+            padding: 14px 8px 16px;
+            text-align: center;
+            display: flex; flex-direction: column;
+            align-items: center; gap: 8px; flex: 1;
+        }
+        .staff-id {
+            font-size: 1.4rem; font-weight: 700;
+            color: var(--paper); letter-spacing: 1px;
+            background: rgba(0,0,0,0.25);
+            padding: 4px 18px; border-radius: 40px;
+            border: 0.5px solid var(--border-ink-strong);
+            box-shadow: inset 0 1px 0 rgba(255,245,200,0.12);
+        }
+        .staff-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px; margin: 2px 0; }
+        .staff-tag {
+            background: rgba(140, 44, 34, 0.18);
+            padding: 3px 12px; border-radius: 20px;
+            font-size: 0.6rem; color: var(--cinnabar-light);
+            border: 0.5px solid rgba(178,58,46,0.4);
+            backdrop-filter: blur(4px);
+        }
+        .staff-desc { font-size: 0.7rem; color: var(--paper-dim); line-height: 1.5; margin: 2px 0; }
+        .card-select-btn {
+            background: rgba(178, 58, 46, 0.16);
+            border: 1px solid var(--cinnabar);
+            color: var(--paper); font-weight: 600;
+            font-size: 0.7rem; padding: 6px 20px;
+            border-radius: 30px; cursor: pointer;
+            margin-top: 6px; transition: 0.2s;
+            letter-spacing: 0.5px;
+            font-family: inherit;
+        }
+        .card-select-btn:active { background: rgba(178, 58, 46, 0.35); transform: scale(0.96); }
+
+        .placeholder-img {
+            width: 100%; aspect-ratio: 1/1;
+            background: #1f1810;
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            color: var(--paper-muted); font-size: 0.75rem;
+        }
+        .placeholder-img .icon { font-size: 2.5rem; margin-bottom: 6px; opacity: 0.5; }
+
+        .no-staff {
+            grid-column: 1/-1;
+            text-align: center; padding: 36px 16px;
+            color: var(--paper-muted); font-size: 0.85rem;
+        }
+        .no-staff .icon { font-size: 2rem; display: block; margin-bottom: 8px; }
+
+        .hidden-photo-notice {
+            text-align: center; padding: 12px 16px;
+            font-size: 0.65rem; color: var(--paper-muted);
+            border-top: 1px dashed var(--border-ink-strong);
+            margin: 0 16px 12px;
+            display: flex; align-items: center; justify-content: center;
+            gap: 6px; background: rgba(0,0,0,0.2);
+            border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+            backdrop-filter: blur(4px);
+        }
+
+        .mini-items {
+            display: flex; flex-wrap: wrap; justify-content: center;
+            gap: 8px; padding: 14px 20px 18px;
+        }
+        .mini-item-tag {
+            background: rgba(178, 58, 46, 0.14);
+            border: 1px solid var(--cinnabar);
+            border-radius: 24px; padding: 8px 20px;
+            font-size: 0.78rem; color: var(--cinnabar-light); font-weight: 600;
+            letter-spacing: 1px;
+            transition: var(--transition);
+        }
+        .mini-item-tag:active { transform: scale(0.95); background: rgba(178, 58, 46, 0.28); }
+
+        /* ===== 底部栏 ===== */
+        .bottom-bar {
+            position: fixed; bottom: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 100%; max-width: 480px;
+            background: rgba(12, 9, 6, 0.92);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid var(--border-ink-strong);
+            display: flex; justify-content: space-around;
+            padding: 14px 16px;
+            z-index: 1500; gap: 10px;
+            padding-bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+        }
+        .bottom-btn {
+            flex: 1;
+            background: rgba(34, 29, 24, 0.8);
+            border: 1px solid var(--border-ink-strong);
+            border-radius: 40px; padding: 12px 6px;
+            font-size: 0.75rem; font-weight: 600;
+            color: var(--paper);
+            display: flex; align-items: center; justify-content: center;
+            gap: 6px; cursor: pointer;
+            backdrop-filter: blur(8px); transition: var(--transition);
+            font-family: inherit;
+        }
+        .bottom-btn.primary {
+            background: linear-gradient(135deg, var(--cinnabar-light), var(--cinnabar-deep));
+            border-color: var(--cinnabar-light); color: var(--paper);
+            box-shadow: 0 4px 16px rgba(178, 58, 46, 0.4);
+            font-size: 0.8rem;
+        }
+        .bottom-btn:active { transform: scale(0.96); }
+        @media (hover: hover) {
+            .bottom-btn:hover { background: rgba(50, 42, 34, 0.9); border-color: var(--paper-dim); transform: translateY(-2px); }
+            .bottom-btn.primary:hover { box-shadow: 0 6px 24px rgba(178, 58, 46, 0.6); transform: translateY(-2px) scale(1.03); }
+        }
+
+        /* ===== 弹窗 ===== */
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(8, 6, 4, 0.82); backdrop-filter: blur(10px);
+            z-index: 2000; display: flex; align-items: center; justify-content: center;
+            opacity: 0; pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        .modal-overlay.show { opacity: 1; pointer-events: auto; }
+        .modal-card {
+            background: rgba(28, 24, 19, 0.96);
+            backdrop-filter: blur(16px);
+            border: 1.5px solid var(--cinnabar);
+            border-radius: 32px; padding: 36px 24px 28px;
+            width: 85%; max-width: 320px;
+            text-align: center;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.8), 0 0 40px rgba(178,58,46,0.12);
+            position: relative;
+            transform: scale(0.85) translateY(20px);
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .modal-overlay.show .modal-card { transform: scale(1) translateY(0); }
+        .close-modal {
+            position: absolute; top: 14px; right: 18px;
+            background: none; border: none; color: var(--paper-muted);
+            font-size: 1.6rem; cursor: pointer;
+            width: 32px; height: 32px;
+            display: flex; align-items: center; justify-content: center;
+            border-radius: 50%; transition: 0.2s;
+        }
+        .close-modal:active { background: rgba(255,255,255,0.1); }
+        .modal-card h3 { color: var(--paper); font-size: 1.2rem; margin-bottom: 12px; letter-spacing: 1px; font-weight: 600; }
+        .big-price { font-size: clamp(1.8rem, 7vw, 2.4rem); font-weight: 700; color: var(--paper); }
+        .benefit { color: var(--paper-dim); font-size: 0.8rem; margin: 12px 0 20px; line-height: 1.6; }
+        .modal-btn {
+            background: linear-gradient(135deg, var(--cinnabar-light), var(--cinnabar-deep));
+            border: none; border-radius: 40px;
+            padding: 12px 32px; font-weight: 700; color: var(--paper);
+            font-size: 0.9rem; cursor: pointer;
+            box-shadow: 0 6px 20px rgba(178, 58, 46, 0.5);
+            transition: var(--transition);
+            font-family: inherit;
+        }
+        .modal-btn:active { transform: scale(0.96); }
+        @media (hover: hover) {
+            .modal-btn:hover { box-shadow: 0 8px 28px rgba(178, 58, 46, 0.7); transform: translateY(-2px); }
+        }
+
+        .wechat-id-row {
+            display: flex; align-items: center; justify-content: center;
+            gap: 8px; margin: 0 0 14px;
+        }
+        .wechat-id-row .wx-id {
+            color: var(--paper); font-size: 1rem; font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .copy-btn {
+            background: rgba(178, 58, 46, 0.25);
+            border: 1px solid var(--cinnabar);
+            color: var(--paper);
+            font-size: 0.65rem; padding: 4px 12px;
+            border-radius: 20px; cursor: pointer;
+            transition: 0.2s; font-family: inherit;
+            white-space: nowrap;
+        }
+        .copy-btn:active { transform: scale(0.92); background: rgba(178, 58, 46, 0.45); }
+        .copy-btn.copied { background: rgba(80, 160, 100, 0.3); border-color: rgba(100, 200, 120, 0.5); color: #a0d8a0; }
+
+        /* ===== 图片查看器 ===== */
+        .lightbox {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 5000;
+            display: flex; align-items: center; justify-content: center;
+            opacity: 0; pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        .lightbox.show { opacity: 1; pointer-events: auto; }
+        .lightbox img {
+            max-width: 95%; max-height: 85vh;
+            border-radius: var(--radius-sm);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+            transform: scale(0.85);
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .lightbox.show img { transform: scale(1); }
+        .lightbox-close {
+            position: absolute; top: 20px; right: 20px;
+            width: 40px; height: 40px;
+            background: rgba(255,255,255,0.1);
+            border: none; border-radius: 50%;
+            color: #fff; font-size: 1.5rem;
+            cursor: pointer; display: flex;
+            align-items: center; justify-content: center;
+            transition: 0.2s;
+        }
+        .lightbox-close:active { background: rgba(255,255,255,0.2); transform: scale(0.9); }
+        .lightbox-caption {
+            position: absolute; bottom: 30px; left: 0; right: 0;
+            text-align: center; color: var(--paper);
+            font-size: 0.85rem; letter-spacing: 1px;
+        }
+
+        /* ===== Toast ===== */
+        .toast {
+            position: fixed; bottom: 130px; left: 50%; transform: translateX(-50%);
+            background: rgba(34, 29, 24, 0.95); backdrop-filter: blur(16px);
+            color: var(--paper); padding: 10px 24px; border-radius: 40px;
+            font-size: 0.75rem; z-index: 3000; border: 1px solid var(--cinnabar); white-space: nowrap;
+            animation: toastIn 0.3s ease;
+        }
+        @keyframes toastIn {
+            from { opacity: 0; transform: translateX(-50%) translateY(10px); }
+            to { opacity: 1; transform: translateX(-50%) translateY(0); }
+        }
+
+        /* ===== 页脚 ===== */
+        .footer {
+            text-align: center; padding: 24px 20px 16px;
+            font-size: 0.65rem; color: var(--paper-muted);
+        }
+        .footer .footer-address {
+            font-size: 0.7rem; color: var(--paper-muted);
+            margin-top: 6px; line-height: 1.6;
+        }
+        .footer .footer-phone {
+            color: var(--cinnabar-light); font-weight: 600;
+            font-size: 0.78rem; margin-top: 4px;
+            display: block;
+        }
+
+        /* ===== 音乐按钮 ===== */
+        .music-btn {
+            position: fixed;
+            right: 16px;
+            bottom: calc(130px + env(safe-area-inset-bottom, 0px));
+            width: 44px; height: 44px;
+            border-radius: 50%;
+            background: rgba(34, 29, 24, 0.85);
+            backdrop-filter: blur(10px);
+            border: 1.5px solid var(--border-ink-strong);
+            color: var(--paper-dim);
+            font-size: 1.15rem;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer;
+            z-index: 2500;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+            transition: var(--transition);
+            user-select: none;
+        }
+        .music-btn:active { transform: scale(0.9); }
+        @media (hover: hover) {
+            .music-btn:hover { background: rgba(50, 42, 34, 0.9); border-color: var(--paper-dim); }
+        }
+        .music-btn.playing {
+            animation: musicPulse 1.2s ease-in-out infinite;
+            border-color: var(--cinnabar);
+            color: var(--cinnabar-light);
+            box-shadow: 0 0 16px rgba(178, 58, 46, 0.4);
+        }
+        @keyframes musicPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        .music-btn .bar-group { display: flex; gap: 3px; align-items: flex-end; height: 16px; }
+        .music-btn .bar-group .bar { width: 3px; border-radius: 2px; background: var(--paper-dim); transition: height 0.3s; }
+        .music-btn.playing .bar-group .bar { animation: barDance 0.8s ease-in-out infinite; background: var(--cinnabar-light); }
+        .music-btn.playing .bar-group .bar:nth-child(1) { animation-delay: 0s; }
+        .music-btn.playing .bar-group .bar:nth-child(2) { animation-delay: 0.15s; }
+        .music-btn.playing .bar-group .bar:nth-child(3) { animation-delay: 0.3s; }
+        .music-btn.playing .bar-group .bar:nth-child(4) { animation-delay: 0.45s; }
+        @keyframes barDance { 0%, 100% { height: 4px; } 50% { height: 16px; } }
+        .music-btn:not(.playing) .bar-group .bar { height: 4px !important; animation: none; }
+
+        /* ===== 返回顶部按钮 ===== */
+        .back-top {
+            position: fixed;
+            right: 16px;
+            bottom: calc(185px + env(safe-area-inset-bottom, 0px));
+            width: 40px; height: 40px;
+            border-radius: 50%;
+            background: rgba(34, 29, 24, 0.85);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-ink);
+            color: var(--paper-dim);
+            font-size: 1.2rem;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer;
+            z-index: 2400;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+            opacity: 0; pointer-events: none;
+            transition: var(--transition);
+        }
+        .back-top.show { opacity: 1; pointer-events: auto; }
+        .back-top:active { transform: scale(0.9); }
+
+        /* ===== 动画 ===== */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .fade-in-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hero { animation: heroFadeIn 1s ease 0.2s both; }
+        @keyframes heroFadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .env-slider { animation: sliderFadeIn 1s ease 0.5s both; }
+        @keyframes sliderFadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .tab-bar { animation: tabFadeIn 1s ease 0.7s both; }
+        @keyframes tabFadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .staff-card::after {
+            content: '';
+            position: absolute;
+            top: 50%; left: 50%;
+            width: 0; height: 0;
+            background: rgba(178, 58, 46, 0.15);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.5s, height 0.5s, opacity 0.5s;
+            opacity: 0;
+            pointer-events: none;
+            z-index: 5;
+        }
+        .staff-card.ripple::after { width: 300px; height: 300px; opacity: 1; }
+
+        .skeleton {
+            background: linear-gradient(90deg, rgba(34,29,24,0.6) 25%, rgba(54,46,37,0.6) 50%, rgba(34,29,24,0.6) 75%);
+            background-size: 200% 100%;
+            animation: skeletonShimmer 1.5s infinite;
+        }
+        @keyframes skeletonShimmer {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="main-container">
+    <!-- 头部 -->
+    <div class="hero">
+        <div class="hero-seal">水榭</div>
+        <h1 id="shopTitle">水榭年华</h1>
+        <div class="hero-subtitle" id="heroSubtitle">韶关武江 · 十年老店</div>
+        <div class="divider">
+            <div class="line"></div>
+            <div class="diamond"></div>
+            <div class="line"></div>
+        </div>
+        <div class="usp-banner" id="uspBanner"></div>
+    </div>
+
+    <!-- 环境轮播 -->
+    <div class="env-slider" id="envSlider">
+        <div class="slides" id="envSlides"></div>
+    </div>
+    <div class="env-dots" id="envDots"></div>
+
+    <!-- 营业信息 -->
+    <div class="info-bar" id="infoBar">
+        <div class="info-chip">
+            <span class="icon">🕐</span>
+            <span class="val">24小时营业</span>
+        </div>
+        <div class="info-chip">
+            <span class="icon">📍</span>
+            <span class="val">韶关武江区</span>
+        </div>
+        <div class="info-chip">
+            <span class="icon">🚗</span>
+            <span class="val">10公里接送</span>
+        </div>
+    </div>
+
+    <!-- 服务选项卡 -->
+    <div class="tab-bar" id="tabBar"></div>
+
+    <!-- 技师内容区 -->
+    <div class="project-content" id="projectContent"></div>
+
+    <!-- 页脚 -->
+    <div class="footer" id="footerText">
+        <div>韶城武水 · 十年匠心｜水榭年华娱乐休闲会所</div>
+        <div class="footer-address" id="footerAddress"></div>
+        <span class="footer-phone" id="footerPhone"></span>
+    </div>
+</div>
+
+<!-- 返回顶部 -->
+<div class="back-top" id="backTop" title="返回顶部">↑</div>
+
+<!-- 音乐按钮 -->
+<div class="music-btn" id="musicBtn" title="背景音乐">
+    <div class="bar-group">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+</div>
+
+<!-- 音频元素 -->
+<audio id="bgAudio" loop preload="none">
+    <source src="audio/bg-music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- 底部栏 -->
+<div class="bottom-bar">
+    <button class="bottom-btn" id="btnWechat">💬 微信客服</button>
+    <button class="bottom-btn primary" id="btnCall">📞 一键拨号</button>
+    <button class="bottom-btn" id="btnMap">📍 导航到店</button>
+</div>
+
+<!-- 新人弹窗 -->
+<div class="modal-overlay" id="newcomerModal">
+    <div class="modal-card">
+        <button class="close-modal" id="closeModal">&times;</button>
+        <h3>✨ 水榭年华私域专享礼遇</h3>
+        <div class="big-price" id="modalPrice" style="font-size:2rem;">128元起~</div>
+        <div class="benefit">到店头钟立减6元/位 · 10公里免费接送</div>
+        <button class="modal-btn" id="btnModalWechat">添加微信了解详情</button>
+    </div>
+</div>
+
+<!-- 微信二维码弹窗 -->
+<div class="modal-overlay" id="wechatModal">
+    <div class="modal-card" style="padding-bottom: 28px;">
+        <button class="close-modal" id="closeWechatModal">&times;</button>
+        <h3>💬 扫码添加微信客服</h3>
+        <div class="wechat-id-row">
+            <span style="color:#c4a870; font-size:0.85rem;">微信号：</span>
+            <span class="wx-id" id="modalWechatId"></span>
+            <button class="copy-btn" id="btnCopyWx">复制</button>
+        </div>
+        <img id="modalQrCode" src="" alt="微信二维码" style="width:220px; height:220px; border-radius:12px; object-fit:cover; display:block; margin: 0 auto; box-shadow: 0 4px 20px rgba(0,0,0,0.5);">
+        <p style="color:#9e8b6f; font-size:0.72rem; margin-top:14px; text-align:center;">长按识别二维码 · 或搜索微信号添加</p>
+    </div>
+</div>
+
+<!-- 图片查看器 -->
+<div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose">&times;</button>
+    <img id="lightboxImg" src="" alt="">
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+
+<script src="data.js"></script>
+<script>
+(function () {
+    // ========== 数据读取 ==========
+    var D = window.SITE_DATA;
+    if (!D) { alert('数据加载失败，请确认 data.js 文件存在且格式正确'); return; }
+
+    // ========== 基础信息填充 ==========
+    document.getElementById('shopTitle').textContent = D.shopName;
+    document.getElementById('footerAddress').textContent = '📍 ' + D.address;
+    document.getElementById('footerPhone').textContent = '📞 ' + D.phone;
+
+    // ========== 卖点横幅 ==========
+    var uspBanner = document.getElementById('uspBanner');
+    if (D.uspTags && D.uspTags.length) {
+        D.uspTags.forEach(function (tag) {
+            var span = document.createElement('span');
+            span.className = 'tag';
+            span.textContent = tag;
+            uspBanner.appendChild(span);
+        });
+    }
+
+    // ========== 微信分享卡片 ==========
+    if (D.share) {
+        document.title = D.share.title || D.shopName;
+        var ogTitle = document.querySelector('meta[property="og:title"]');
+        var ogDesc = document.querySelector('meta[property="og:description"]');
+        var ogImage = document.querySelector('meta[property="og:image"]');
+        if (ogTitle) ogTitle.content = D.share.title;
+        if (ogDesc) ogDesc.content = D.share.desc;
+        if (ogImage && D.share.image) ogImage.content = D.share.image;
+    }
+
+    // 计算最低价
+    document.getElementById('modalPrice').innerHTML = '128元起~';
+
+    // ========== 环境轮播 ==========
+    var slidesDiv = document.getElementById('envSlides');
+    var dotsDiv = document.getElementById('envDots');
+    var envImgs = D.envImages && D.envImages.length ? D.envImages : [];
+    var envLabels = ['SPA养生房', '茶艺文化墙', '走廊环境'];
+    var fallbackHTML = '<div class="placeholder-img"><div class="icon">🏠</div>环境照片待上传</div>';
+
+    if (envImgs.length === 0) {
+        slidesDiv.innerHTML = '<div class="slide">' + fallbackHTML + '</div>';
+    } else {
+        envImgs.forEach(function (src, idx) {
+            var slide = document.createElement('div');
+            slide.className = 'slide' + (idx === 0 ? ' active' : '');
+            var img = document.createElement('img');
+            img.src = src;
+            img.alt = '环境照片';
+            img.loading = 'lazy';
+            img.onerror = function () { this.style.display = 'none'; this.parentNode.innerHTML = fallbackHTML; };
+            slide.appendChild(img);
+            // 环境标签
+            if (envLabels[idx]) {
+                var label = document.createElement('div');
+                label.className = 'env-label';
+                label.textContent = envLabels[idx];
+                slide.appendChild(label);
+            }
+            slidesDiv.appendChild(slide);
+        });
+    }
+
+    // 轮播 dots
+    var slideCount = slidesDiv.children.length;
+    var currentSlide = 0;
+    for (var i = 0; i < slideCount; i++) {
+        (function (idx) {
+            var dot = document.createElement('span');
+            dot.className = 'dot' + (i === 0 ? ' active' : '');
+            dot.addEventListener('click', function () { goToSlide(idx); });
+            dotsDiv.appendChild(dot);
+        })(i);
+    }
+    function goToSlide(i) {
+        currentSlide = i;
+        slidesDiv.style.transform = 'translateX(-' + (currentSlide * 100) + '%)';
+        var dots = dotsDiv.querySelectorAll('.dot');
+        var slides = slidesDiv.querySelectorAll('.slide');
+        for (var j = 0; j < dots.length; j++) {
+            dots[j].classList.toggle('active', j === i);
+            if (slides[j]) slides[j].classList.toggle('active', j === i);
+        }
+    }
+
+    // 自动播放
+    var autoPlayTimer = null;
+    if (slideCount > 1) {
+        autoPlayTimer = setInterval(function () { goToSlide((currentSlide + 1) % slideCount); }, 4000);
+    }
+
+    // 触摸滑动支持
+    var touchStartX = 0, touchEndX = 0;
+    var envSlider = document.getElementById('envSlider');
+    envSlider.addEventListener('touchstart', function (e) {
+        touchStartX = e.changedTouches[0].screenX;
+        if (autoPlayTimer) clearInterval(autoPlayTimer);
+    }, { passive: true });
+    envSlider.addEventListener('touchend', function (e) {
+        touchEndX = e.changedTouches[0].screenX;
+        var diff = touchStartX - touchEndX;
+        if (Math.abs(diff) > 40) {
+            if (diff > 0) {
+                goToSlide((currentSlide + 1) % slideCount);
+            } else {
+                goToSlide((currentSlide - 1 + slideCount) % slideCount);
+            }
+        }
+        if (slideCount > 1) {
+            autoPlayTimer = setInterval(function () { goToSlide((currentSlide + 1) % slideCount); }, 4000);
+        }
+    }, { passive: true });
+
+    // ========== 选项卡 ==========
+    var tabBar = document.getElementById('tabBar');
+    var contentDiv = document.getElementById('projectContent');
+    var currentProjectIdx = 0;
+
+    function renderTabs() {
+        tabBar.innerHTML = '';
+        D.projects.forEach(function (proj, idx) {
+            var prices = proj.packages.map(function (p) { return p.price; });
+            var minP = Math.min.apply(null, prices);
+            var btn = document.createElement('button');
+            btn.className = 'tab-btn' + (idx === currentProjectIdx ? ' active' : '');
+            btn.innerHTML = proj.icon + ' ' + proj.name + '<span class="tab-price-hint">¥' + minP + '起</span>';
+            btn.addEventListener('click', function () {
+                if (idx === currentProjectIdx) return;
+                contentDiv.classList.add('fade-out');
+                setTimeout(function () {
+                    currentProjectIdx = idx;
+                    renderTabs();
+                    renderContent();
+                    requestAnimationFrame(function () {
+                        contentDiv.classList.remove('fade-out');
+                    });
+                }, 300);
+            });
+            tabBar.appendChild(btn);
+        });
+    }
+
+    // ========== 技师卡片渲染 ==========
+    function renderContent() {
+        var proj = D.projects[currentProjectIdx];
+        if (!proj) { contentDiv.innerHTML = '<div style="text-align:center;padding:40px;color:#7a684a;">暂无该项目信息</div>'; return; }
+
+        var html = '';
+        proj.packages.forEach(function (pkg) {
+            // 小项目模式
+            if (pkg.miniItems && pkg.miniItems.length) {
+                html += '<div class="package-group">';
+                html +=   '<div class="package-header"><span class="pkg-name">📌 ' + pkg.name + '</span><span class="pkg-price">¥' + pkg.price + '</span></div>';
+                html +=   '<div class="mini-items">';
+                pkg.miniItems.forEach(function (item) {
+                    html += '<span class="mini-item-tag">✦ ' + item + '</span>';
+                });
+                html +=   '</div>';
+                // 小项也有技师
+                if (pkg.staff && pkg.staff.length) {
+                    var visibleMini = pkg.staff.filter(function (s) { return !!s.img; });
+                    if (visibleMini.length > 0) {
+                        html += '<div class="staff-grid">';
+                        visibleMini.forEach(function (s) {
+                            html += renderStaffCard(s, proj, pkg);
+                        });
+                        html += '</div>';
+                    }
+                }
+                html += '</div>';
+                return;
+            }
+
+            var visibleStaff = pkg.staff.filter(function (s) { return !!s.img; });
+            var hasHidden = pkg.staff.some(function (s) { return !s.img; });
+
+            html += '<div class="package-group">';
+            html +=   '<div class="package-header"><span class="pkg-name">📌 ' + pkg.name + '</span><span class="pkg-price">¥' + pkg.price + '</span></div>';
+            html +=   '<div class="staff-grid">';
+
+            if (visibleStaff.length === 0) {
+                html += '<div class="no-staff"><span class="icon">🌸</span>技师即将到岗，敬请期待</div>';
+            } else {
+                visibleStaff.forEach(function (s) {
+                    html += renderStaffCard(s, proj, pkg);
+                });
+            }
+
+            html += '</div>';
+            if (hasHidden) {
+                html += '<div class="hidden-photo-notice">📷 更多技师因个人隐私问题不便展示，欢迎到店了解</div>';
+            }
+            html += '</div>';
+        });
+
+        contentDiv.innerHTML = html;
+
+        // 绑定查看技师按钮
+        contentDiv.querySelectorAll('.card-select-btn').forEach(function (btn) {
+            btn.addEventListener('click', function (e) {
+                e.stopPropagation();
+                showToast('喜欢 ' + btn.getAttribute('data-id') + '号技师？点击底部【微信客服】或【一键拨号】联系');
+            });
+        });
+
+        // 绑定图片点击放大
+        contentDiv.querySelectorAll('.card-img-wrapper').forEach(function (wrapper) {
+            wrapper.addEventListener('click', function () {
+                var img = this.querySelector('img');
+                if (img && img.src) {
+                    var card = this.closest('.staff-card');
+                    var id = card ? card.getAttribute('data-id') : '';
+                    openLightbox(img.src, id ? id + '号技师' : '');
+                }
+            });
+        });
+
+        // 滚动淡入 + 波纹效果
+        observeFadeIn();
+        contentDiv.querySelectorAll('.staff-card').forEach(function (card) {
+            addRippleEffect(card);
+        });
+    }
+
+    function renderStaffCard(s, proj, pkg) {
+        var imgHTML = s.img
+            ? '<div class="card-img-wrapper"><img class="card-img" src="' + s.img + '" alt="技师" loading="lazy" onerror="this.onerror=null;this.parentNode.innerHTML=\'<div class=\\\'placeholder-img\\\'><div class=\\\'icon\\\'>📷</div>照片加载失败</div>\';"><div class="zoom-hint">🔍</div></div>'
+            : '<div class="card-img-wrapper"><div class="placeholder-img"><div class="icon">📷</div>照片待上传</div></div>';
+
+        var desc = s.desc || proj.name + '匠心技艺';
+        var html = '<div class="staff-card" data-id="' + s.id + '">';
+        html +=   imgHTML;
+        html +=   '<div class="card-info">';
+        html +=     '<div class="staff-id">' + s.id + '号</div>';
+        html +=     '<div class="staff-tags"><span class="staff-tag">' + proj.name + '</span><span class="staff-tag">' + pkg.name + '</span></div>';
+        html +=     '<div class="staff-desc">' + desc + '</div>';
+        html +=     '<button class="card-select-btn" data-id="' + s.id + '">👤 查看技师</button>';
+        html +=   '</div>';
+        html += '</div>';
+        return html;
+    }
+
+    // ========== 图片查看器 ==========
+    var lightbox = document.getElementById('lightbox');
+    var lightboxImg = document.getElementById('lightboxImg');
+    var lightboxCaption = document.getElementById('lightboxCaption');
+
+    function openLightbox(src, caption) {
+        lightboxImg.src = src;
+        lightboxCaption.textContent = caption || '';
+        lightbox.classList.add('show');
+    }
+    function closeLightbox() {
+        lightbox.classList.remove('show');
+    }
+    document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', function (e) {
+        if (e.target === lightbox) closeLightbox();
+    });
+
+    // ========== Toast ==========
+    function showToast(msg) {
+        var old = document.querySelector('.toast');
+        if (old) old.remove();
+        var t = document.createElement('div');
+        t.className = 'toast';
+        t.textContent = msg;
+        document.body.appendChild(t);
+        setTimeout(function () { t.remove(); }, 2500);
+    }
+
+    // ========== 底部按钮 ==========
+    document.getElementById('btnCall').addEventListener('click', function () {
+        window.location.href = 'tel:' + D.phone.replace(/-/g, '');
+    });
+
+    // --- 微信客服 ---
+    var wechatModal = document.getElementById('wechatModal');
+    var qrImg = document.getElementById('modalQrCode');
+    var wxId = document.getElementById('modalWechatId');
+    if (D.wechatQrCode) { qrImg.src = D.wechatQrCode; }
+    if (D.wechat) { wxId.textContent = D.wechat; }
+
+    function showWechatModal() {
+        wechatModal.classList.add('show');
+    }
+    function hideWechatModal() {
+        wechatModal.classList.remove('show');
+    }
+
+    document.getElementById('btnWechat').addEventListener('click', showWechatModal);
+    document.getElementById('closeWechatModal').addEventListener('click', hideWechatModal);
+    wechatModal.addEventListener('click', function (e) { if (e.target === wechatModal) hideWechatModal(); });
+
+    // 复制微信号
+    document.getElementById('btnCopyWx').addEventListener('click', function () {
+        var text = D.wechat || '';
+        var btn = this;
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(function () {
+                btn.textContent = '已复制';
+                btn.classList.add('copied');
+                setTimeout(function () { btn.textContent = '复制'; btn.classList.remove('copied'); }, 2000);
+            }).catch(function () { fallbackCopy(text, btn); });
+        } else {
+            fallbackCopy(text, btn);
+        }
+    });
+    function fallbackCopy(text, btn) {
+        var textarea = document.createElement('textarea');
+        textarea.value = text;
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.select();
+        try { document.execCommand('copy'); } catch (e) {}
+        document.body.removeChild(textarea);
+        btn.textContent = '已复制';
+        btn.classList.add('copied');
+        setTimeout(function () { btn.textContent = '复制'; btn.classList.remove('copied'); }, 2000);
+    }
+
+    // --- 导航 ---
+    document.getElementById('btnMap').addEventListener('click', function () {
+        window.open('https://uri.amap.com/search?keyword=' + encodeURIComponent(D.address), '_blank');
+    });
+
+    // ========== 背景音乐 ==========
+    var bgAudio = document.getElementById('bgAudio');
+    var musicBtn = document.getElementById('musicBtn');
+    var isPlaying = false;
+
+    function tryAutoPlay() {
+        bgAudio.volume = 0.35;
+        var p = bgAudio.play();
+        if (p && p.then) {
+            p.then(function () {
+                isPlaying = true;
+                musicBtn.classList.add('playing');
+            }).catch(function () {
+                isPlaying = false;
+                musicBtn.classList.remove('playing');
+            });
+        }
+    }
+
+    musicBtn.addEventListener('click', function () {
+        if (isPlaying) {
+            bgAudio.pause();
+            isPlaying = false;
+            musicBtn.classList.remove('playing');
+        } else {
+            bgAudio.volume = 0.35;
+            bgAudio.play().then(function () {
+                isPlaying = true;
+                musicBtn.classList.add('playing');
+            }).catch(function () {
+                showToast('点击页面任意位置后再次点击音乐按钮');
+            });
+        }
+    });
+
+    var firstTouchDone = false;
+    document.addEventListener('click', function () {
+        if (!firstTouchDone) {
+            firstTouchDone = true;
+            tryAutoPlay();
+        }
+    }, { once: false });
+
+    // ========== 返回顶部 ==========
+    var backTop = document.getElementById('backTop');
+    window.addEventListener('scroll', function () {
+        if (window.scrollY > 400) {
+            backTop.classList.add('show');
+        } else {
+            backTop.classList.remove('show');
+        }
+    }, { passive: true });
+    backTop.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // ========== 滚动淡入动画 ==========
+    var fadeObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+    function observeFadeIn() {
+        document.querySelectorAll('.package-group').forEach(function (el) {
+            if (!el.classList.contains('fade-in-section')) {
+                el.classList.add('fade-in-section');
+                fadeObserver.observe(el);
+            }
+        });
+        document.querySelectorAll('.staff-card').forEach(function (el) {
+            if (!el.classList.contains('fade-in-section')) {
+                el.classList.add('fade-in-section');
+                fadeObserver.observe(el);
+            }
+        });
+    }
+
+    // ========== 卡片波纹效果 ==========
+    function addRippleEffect(el) {
+        el.addEventListener('click', function () {
+            el.classList.remove('ripple');
+            void el.offsetWidth;
+            el.classList.add('ripple');
+            setTimeout(function () { el.classList.remove('ripple'); }, 600);
+        });
+    }
+
+    // ========== 新人弹窗（localStorage 记忆）==========
+    var modal = document.getElementById('newcomerModal');
+    var MODAL_KEY = 'sxnh_newcomer_closed';
+
+    function showNewcomerModal() {
+        if (localStorage.getItem(MODAL_KEY)) return;
+        setTimeout(function () { modal.classList.add('show'); }, 2500);
+    }
+
+    document.getElementById('closeModal').addEventListener('click', function () {
+        modal.classList.remove('show');
+        localStorage.setItem(MODAL_KEY, '1');
+    });
+    document.getElementById('btnModalWechat').addEventListener('click', function () {
+        modal.classList.remove('show');
+        localStorage.setItem(MODAL_KEY, '1');
+        setTimeout(showWechatModal, 300);
+    });
+    modal.addEventListener('click', function (e) {
+        if (e.target === modal) {
+            modal.classList.remove('show');
+            localStorage.setItem(MODAL_KEY, '1');
+        }
+    });
+
+    // ========== 初始化 ==========
+    renderTabs();
+    renderContent();
+    setTimeout(observeFadeIn, 100);
+    showNewcomerModal();
+
+})();
+</script>
+</body>
+</html>
