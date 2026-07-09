@@ -86,9 +86,7 @@ var SITE_DATA = {
         {
           name: "清风一凡",
           price: 188,
-          staff: [
-            { id: "218", img: "images/staff-qingfeng-218.jpg", desc: "" }
-          ]
+          staff: []
         },
         {
           name: "明月禅尘",
