@@ -634,9 +634,21 @@
             box-shadow: 0 12px 32px rgba(0,0,0,0.45), inset 0 1px 0 rgba(201,168,106,0.12);
             display: flex; flex-direction: column; align-items: center; gap: 13px;
         }
+        .qrcode-card.featured {
+            border-color: rgba(201,168,106,0.65);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.5), 0 0 26px rgba(201,168,106,0.20), inset 0 1px 0 rgba(201,168,106,0.18);
+        }
         .qr-label {
             font-size: 0.82rem; color: var(--cinnabar-light);
             letter-spacing: 3px; font-weight: 600;
+        }
+        .qr-badge {
+            display: inline-block;
+            font-size: 0.74rem; font-weight: 700; letter-spacing: 1px;
+            color: #1a1505;
+            background: linear-gradient(135deg, #ecd9a8, #c9a86a);
+            padding: 4px 16px; border-radius: 20px;
+            box-shadow: 0 3px 12px rgba(201,168,106,0.4);
         }
         .qr-frame {
             background: #fff;
@@ -646,7 +658,7 @@
             line-height: 0;
         }
         .qr-frame img {
-            width: 190px; height: 190px; object-fit: contain; display: block;
+            width: 200px; height: 200px; object-fit: contain; display: block;
             border-radius: 8px;
         }
 
@@ -829,22 +841,18 @@
 
     <!-- 团购/评价二维码 -->
     <div class="qrcode-section">
-        <h3>团购 · 客服 · 联系</h3>
+        <h3>美团 · 抖音 下单立减</h3>
         <div class="qrcode-grid">
-            <div class="qrcode-card">
-                <span class="qr-label">微信客服</span>
-                <div class="qr-frame">
-                    <img src="images/qrcode-wechat.jpg" alt="微信客服" onerror="this.style.display='none'">
-                </div>
-            </div>
-            <div class="qrcode-card">
+            <div class="qrcode-card featured">
                 <span class="qr-label">美团</span>
+                <span class="qr-badge">下单优惠 ¥5~15</span>
                 <div class="qr-frame">
                     <img src="images/qrcode-meituan.png" alt="美团" onerror="this.style.display='none'">
                 </div>
             </div>
-            <div class="qrcode-card">
+            <div class="qrcode-card featured">
                 <span class="qr-label">抖音生活</span>
+                <span class="qr-badge">下单优惠 ¥5~15</span>
                 <div class="qr-frame">
                     <img src="images/qrcode-douyin.jpg" alt="抖音生活服务" onerror="this.style.display='none'">
                 </div>
