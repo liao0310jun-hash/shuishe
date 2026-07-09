@@ -624,7 +624,7 @@
             background: linear-gradient(90deg, transparent, var(--cinnabar), transparent);
         }
         .qrcode-grid {
-            display: flex; justify-content: center; gap: 18px; flex-wrap: wrap;
+            display: flex; justify-content: center; gap: 16px; flex-wrap: nowrap;
         }
         .qrcode-card {
             background: linear-gradient(160deg, rgba(24,24,30,0.72), rgba(10,10,13,0.5));
@@ -658,8 +658,12 @@
             line-height: 0;
         }
         .qr-frame img {
-            width: 200px; height: 200px; object-fit: contain; display: block;
+            width: 148px; height: 148px; object-fit: contain; display: block;
             border-radius: 8px;
+        }
+        @media (min-width: 430px) {
+            .qr-frame img { width: 180px; height: 180px; }
+            .qrcode-card { padding: 20px 22px 16px; }
         }
 
         /* ===== 页脚 ===== */
@@ -845,14 +849,14 @@
         <div class="qrcode-grid">
             <div class="qrcode-card featured">
                 <span class="qr-label">美团</span>
-                <span class="qr-badge">下单优惠 ¥5~15</span>
+                <span class="qr-badge">领券优惠 ¥5~15</span>
                 <div class="qr-frame">
                     <img src="images/qrcode-meituan.png" alt="美团" onerror="this.style.display='none'">
                 </div>
             </div>
             <div class="qrcode-card featured">
                 <span class="qr-label">抖音生活</span>
-                <span class="qr-badge">下单优惠 ¥5~15</span>
+                <span class="qr-badge">领券优惠 ¥5~15</span>
                 <div class="qr-frame">
                     <img src="images/qrcode-douyin.jpg" alt="抖音生活服务" onerror="this.style.display='none'">
                 </div>
