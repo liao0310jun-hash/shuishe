@@ -603,6 +603,35 @@
             to { opacity: 1; transform: translateX(-50%) translateY(0); }
         }
 
+        /* ===== 团购/评价二维码 ===== */
+        .qrcode-section {
+            padding: 28px 20px 16px;
+            text-align: center;
+        }
+        .qrcode-section h3 {
+            font-size: 1rem; font-weight: 600;
+            color: var(--cinnabar-light);
+            margin-bottom: 18px;
+            letter-spacing: 4px;
+        }
+        .qrcode-grid {
+            display: flex; justify-content: center; gap: 24px;
+        }
+        .qrcode-item {
+            display: flex; flex-direction: column; align-items: center; gap: 8px;
+        }
+        .qrcode-item img {
+            width: 160px; height: auto;
+            border-radius: 12px;
+            border: 1px solid var(--border-ink-strong);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+            background: #fff;
+        }
+        .qrcode-item span {
+            font-size: 0.72rem; color: var(--paper-dim);
+            letter-spacing: 1px;
+        }
+
         /* ===== 页脚 ===== */
         .footer {
             text-align: center; padding: 24px 20px 16px;
@@ -779,6 +808,21 @@
 
     <!-- 技师内容区 -->
     <div class="project-content" id="projectContent"></div>
+
+    <!-- 团购/评价二维码 -->
+    <div class="qrcode-section">
+        <h3>团购 · 优惠 · 评价</h3>
+        <div class="qrcode-grid">
+            <div class="qrcode-item">
+                <img src="images/qrcode-dianping.jpg" alt="大众点评" onerror="this.style.display='none'">
+                <span>大众点评 评分有礼</span>
+            </div>
+            <div class="qrcode-item">
+                <img src="images/qrcode-douyin.jpg" alt="抖音生活服务" onerror="this.style.display='none'">
+                <span>抖音生活 抢团购</span>
+            </div>
+        </div>
+    </div>
 
     <!-- 页脚 -->
     <div class="footer" id="footerText">
