@@ -13,7 +13,7 @@
     <!-- 字体：毛笔标题 + 宋体正文 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
@@ -94,7 +94,7 @@
             pointer-events: none;
         }
         .hero h1 {
-            font-family: 'Noto Serif SC', 'Cormorant Garamond', serif;
+            font-family: 'Noto Serif SC', 'Playfair Display', serif;
             font-size: clamp(2.4rem, 9vw, 3.2rem);
             font-weight: 400;
             background: linear-gradient(135deg, var(--paper) 0%, var(--cinnabar-light) 70%, var(--cinnabar) 100%);
@@ -382,13 +382,14 @@
             align-items: center; gap: 8px; flex: 1;
         }
         .staff-id {
-            font-family: 'Cormorant Garamond', 'Noto Serif SC', serif;
-            font-size: 1.5rem; font-weight: 700;
-            color: var(--cinnabar-light); letter-spacing: 1px;
-            background: rgba(0,0,0,0.3);
-            padding: 4px 18px; border-radius: 40px;
-            border: 0.5px solid rgba(201,168,106,0.45);
-            box-shadow: inset 0 1px 0 rgba(201,168,106,0.18), 0 0 12px rgba(201,168,106,0.15);
+            font-family: 'Playfair Display', 'Noto Serif SC', serif;
+            font-size: 1.15rem; font-weight: 600;
+            color: var(--cinnabar-light); letter-spacing: 2px;
+            background: linear-gradient(135deg, rgba(0,0,0,0.45), rgba(0,0,0,0.25));
+            padding: 5px 22px; border-radius: 40px;
+            border: 1px solid rgba(201,168,106,0.35);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.3), inset 0 1px 0 rgba(201,168,106,0.12);
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
         }
         .staff-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px; margin: 2px 0; }
         .staff-tag {
