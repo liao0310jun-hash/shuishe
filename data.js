@@ -72,7 +72,8 @@ var SITE_DATA = {
             { id: "222", img: "images/staff-guifei-222.jpg", desc: "" },
             { id: "555", img: "images/staff-guifei-555.jpg", desc: "" },
             { id: "182", img: "images/staff-guifei-82.jpg", desc: "" },
-            { id: "2", img: "images/staff-guifei-2.jpg", desc: "" }
+            { id: "2", img: "images/staff-guifei-2.jpg", desc: "" },
+            { id: "272", img: "images/staff-guifei-272.jpg", desc: "" }
           ]
         }
       ]
