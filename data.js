@@ -23,7 +23,7 @@ var SITE_DATA = {
   shopName: "水榭年华娱乐休闲会所",
   phone: "0751-8609686",
   wechat: "sx8609686",
-  wechatQrCode: "images/wechat-qrcode.jpg",   // 微信二维码图片
+  wechatQrCode: "images/qrcode-wechat.jpg",   // 微信二维码图片
   address: "武江区新华南路与五祖路口交界处 水榭年华娱乐休闲会所",
 
   // ---- 微信分享卡片配置 ----
