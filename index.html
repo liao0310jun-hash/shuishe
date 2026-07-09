@@ -10,10 +10,7 @@
     <meta property="og:image" content="https://liao0310jun-hash.github.io/shuishe/images/env-spa.jpg">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
-    <!-- 字体：毛笔标题 + 宋体正文 -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- 字体：微软雅黑（系统字体，无需联网）-->
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
@@ -44,7 +41,7 @@
             --transition: 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
         body {
-            font-family: 'Noto Serif SC', 'Inter', -apple-system, system-ui, sans-serif;
+            font-family: 'Microsoft YaHei', '微软雅黑', -apple-system, system-ui, sans-serif;
             background: var(--ink);
             color: var(--paper);
             line-height: 1.5;
@@ -94,7 +91,7 @@
             pointer-events: none;
         }
         .hero h1 {
-            font-family: 'Noto Serif SC', 'Playfair Display', serif;
+            font-family: 'Microsoft YaHei', '微软雅黑', sans-serif;
             font-size: clamp(2.4rem, 9vw, 3.2rem);
             font-weight: 400;
             background: linear-gradient(135deg, var(--paper) 0%, var(--cinnabar-light) 70%, var(--cinnabar) 100%);
@@ -123,7 +120,7 @@
             width: 38px; height: 38px;
             background: linear-gradient(135deg, var(--cinnabar-light), var(--cinnabar-deep));
             color: var(--ink-deep);
-            font-family: 'Noto Serif SC', serif;
+            font-family: 'Microsoft YaHei', '微软雅黑', sans-serif;
             font-size: 0.72rem;
             line-height: 1.05;
             display: flex; align-items: center; justify-content: center;
@@ -382,9 +379,9 @@
             align-items: center; gap: 8px; flex: 1;
         }
         .staff-id {
-            font-family: 'Playfair Display', 'Noto Serif SC', serif;
+            font-family: 'Microsoft YaHei', '微软雅黑', sans-serif;
             font-size: 1.15rem; font-weight: 600;
-            color: var(--cinnabar-light); letter-spacing: 2px;
+            color: var(--cinnabar-light); letter-spacing: 1px;
             background: linear-gradient(135deg, rgba(0,0,0,0.45), rgba(0,0,0,0.25));
             padding: 5px 22px; border-radius: 40px;
             border: 1px solid rgba(201,168,106,0.35);
